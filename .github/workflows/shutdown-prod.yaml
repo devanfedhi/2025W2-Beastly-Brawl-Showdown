@@ -1,11 +1,11 @@
-name: Prod - Startup Droplet & Deploy Game
+name: Prod - Shutdown Droplet
 
 on:
   workflow_dispatch:
 
 jobs:
-  call-startup-template:
-    uses: ./.github/workflows/startup-template.yaml
+  call-shutdown-template:
+    uses: ./.github/workflows/shutdown-template.yaml
     with:
       env: prod
     secrets:
