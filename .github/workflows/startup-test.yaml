@@ -1,0 +1,10 @@
+name: Test - Startup Droplet & Deploy Game
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-startup-template:
+    uses: ./.github/workflows/startup-template.yaml
+    with:
+      env: test
