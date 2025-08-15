@@ -8,3 +8,7 @@ jobs:
     uses: ./.github/workflows/startup-template.yaml
     with:
       env: test
+    secrets:
+      DIGITAL_OCEAN_PAT: ${{ secrets.DIGITAL_OCEAN_PAT }}
+      DIGITAL_OCEAN_SPACES_ACCESS_KEY_ID: ${{ secrets.DIGITAL_OCEAN_SPACES_ACCESS_KEY_ID }}
+      DIGITAL_OCEAN_SPACES_SECRET_KEY: ${{ secrets.DIGITAL_OCEAN_SPACES_SECRET_KEY }}
