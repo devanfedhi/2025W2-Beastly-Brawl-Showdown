@@ -27,6 +27,7 @@ env:
 
 jobs:
   shutdown:
+    name: Take a snapshot of the droplet and shut it down
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

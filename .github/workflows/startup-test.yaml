@@ -5,6 +5,7 @@ on:
 
 jobs:
   call-startup-template:
+    name: Startup Droplet & Deploy Game
     uses: ./.github/workflows/startup-template.yaml
     with:
       env: test

@@ -5,6 +5,7 @@ on:
 
 jobs:
   call-shutdown-template:
+    name: Shutdown Droplet
     uses: ./.github/workflows/shutdown-template.yaml
     with:
       env: test
