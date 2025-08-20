@@ -6,9 +6,12 @@ set -e
 # Enable debug mode
 set -x
 
-cd ~/deployment
-
 GITHUB_PACKAGES_TOKEN=$1
+ENV=$2
+
+export BEASTLY_BRAWL_IMAGE="ghcr.io/fit3170-beastly-brawl/beastly-brawl-${ENV}:latest"
+
+cd ~/deployment
 
 echo "${GITHUB_PACKAGES_TOKEN}" | docker login ghcr.io -u fit3170-beastly-brawl --password-stdin 
 

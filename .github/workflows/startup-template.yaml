@@ -23,6 +23,8 @@ on:
         required: true
       GHCR_PACKAGES_TOKEN:
         required: true
+      BEASTLYBRAWL_APP_ROOT_URL:
+        required: true
 
 env:
   working_directory: ./terraform
@@ -154,6 +156,7 @@ jobs:
           platforms: linux/amd64
           build-args: |
             ENV=${{ inputs.env }}
+            ROOT_URL=${{ secrets.BEASTLYBRAWL_APP_ROOT_URL }}
 
       - name: Delete old package versions
         uses: actions/delete-package-versions@v5
@@ -244,4 +247,4 @@ jobs:
           username: ${{ env.droplet_user }}
           key: ${{ secrets.DIGITAL_OCEAN_DROPLET_SSH_PRIVATE_KEY }}
           script: |
-            source ~/deployment/setup.sh ${{ secrets.GHCR_PACKAGES_TOKEN }}
+            source ~/deployment/setup.sh ${{ secrets.GHCR_PACKAGES_TOKEN }} ${{ inputs.env }}
