@@ -121,7 +121,7 @@ jobs:
 
   # Builds all the Docker related stuff.
   docker_build:
-    name: Build ta Docker Image of the Meteor Application
+    name: Build the Docker Image of the Meteor Application
     runs-on: ubuntu-latest
     needs: startup
     steps:
