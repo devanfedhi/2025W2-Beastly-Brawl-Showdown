@@ -25,8 +25,10 @@ WORKDIR /app
 # Copy built bundle from builder
 COPY --from=builder /output/bundle /app
 
+ARG ENV
+
 # Copy settings.json into the image
-COPY settings.prod.json /app/settings.json
+COPY settings.${ENV}.json /app/settings.json
 
 # Install server dependencies
 WORKDIR /app/programs/server
