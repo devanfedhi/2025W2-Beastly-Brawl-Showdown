@@ -21,6 +21,8 @@ on:
         required: true
       BEASTLYBRAWL_APP_SSL_KEY:
         required: true
+      GHCR_PACKAGES_TOKEN:
+        required: true
 
 env:
   working_directory: ./terraform
