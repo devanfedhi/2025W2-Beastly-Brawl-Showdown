@@ -207,7 +207,7 @@ jobs:
           key: ${{ secrets.DIGITAL_OCEAN_DROPLET_SSH_PRIVATE_KEY }}
           source: "./deployment/docker-compose.yaml"
           target: "~/deployment"
-          strip_components: 3
+          strip_components: 2
 
       # Renames the nginx configuration file to just default.conf
       - name: Prepare nginx config file
@@ -222,7 +222,7 @@ jobs:
           key: ${{ secrets.DIGITAL_OCEAN_DROPLET_SSH_PRIVATE_KEY }}
           source: "./deployment/default.${{ inputs.env }}.conf"
           target: "~/deployment"
-          strip_components: 3
+          strip_components: 2
 
       # Create the ssl.crt and ssl.key files from the secrets. These will be used by nginx to serve the app over HTTPS.
       - name: Create SSL cert and key files
