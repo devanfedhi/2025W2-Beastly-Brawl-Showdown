@@ -10,6 +10,8 @@ ENV=$1
 
 export BEASTLY_BRAWL_IMAGE="ghcr.io/fit3170-beastly-brawl/beastly-brawl-${ENV}:latest"
 
+cd ~/deployment
+
 # Restart containers with updated image
 docker compose down
 docker compose up -d
