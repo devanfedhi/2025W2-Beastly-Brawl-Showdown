@@ -156,6 +156,7 @@ jobs:
       - name: Delete old package versions
         uses: actions/delete-package-versions@v5
         with:
+          owner: ${{ env.ghcr_user }}
           package-name: ${{ env.image_name }}
           package-type: container
           min-versions-to-keep: 10
